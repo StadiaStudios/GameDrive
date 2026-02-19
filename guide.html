@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameDrive - Tutorial & Data Safety</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="resources/icons/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #efefef;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ef4444; }
+
+        .glass-card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(239, 68, 68, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-dot {
+            height: 8px;
+            width: 8px;
+            background-color: #ef4444;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 12px;
+            box-shadow: 0 0 10px #ef4444;
+        }
+
+        code {
+            background: rgba(239, 68, 68, 0.1);
+            color: #f87171;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- The Navbar is injected here by navbar.js -->
+    <script src="navbar.js"></script>
+
+    <!-- Hero Header -->
+    <header class="relative pt-20 pb-12 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-500/10 via-transparent to-transparent -z-10"></div>
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4 gradient-text">
+                Master Your Cloud Saves
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                Learn how to secure your progression, manage your library, and ensure your data stays safe across every device you own.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 space-y-20 pb-24">
+
+        <!-- 1. Managing Games -->
+        <section id="basics">
+            <div class="flex items-center mb-8">
+                <span class="section-dot"></span>
+                <h2 class="text-2xl font-bold tracking-tight">Managing Your Games</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Adding a New Game</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex gap-3">
+                            <span class="text-red-500 font-mono">01</span>
+                            <span>Open your <span class="text-gray-200">Dashboard</span> and locate the action bar.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-red-500 font-mono">02</span>
+                            <span>Click <code>Add New Game</code> to create a dedicated directory.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-red-500 font-mono">03</span>
+                            <span>Define the title and add optional notes for easy organization.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Uploading Saves</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex gap-3">
+                            <span class="text-red-500 font-mono">01</span>
+                            <span>Enter the game profile from your main drive list.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-red-500 font-mono">02</span>
+                            <span>Select your save file or a <code>.zip</code> archive of the save folder.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-red-500 font-mono">03</span>
+                            <span>Label the backup (e.g., "Post-Boss Save") and finalize the upload.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Data Strategy -->
+        <section id="safety">
+            <div class="flex items-center mb-8">
+                <span class="section-dot"></span>
+                <h2 class="text-2xl font-bold tracking-tight">Data Integrity & Restoration</h2>
+            </div>
+
+            <div class="glass-card border-red-500/20 bg-gradient-to-br from-red-500/5 to-transparent p-8 md:p-12 rounded-3xl relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-red-500/10 blur-[100px] -z-10"></div>
+                
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-4 text-white">How to Restore a Backup</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Restoring is as simple as downloading. Your files are stored in <strong>IndexedDB</strong>, making them persistent within your browser's local environment.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Find the save entry in your game's history.</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Click the download icon to retrieve your file.</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Place the file back into your local game directory.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-80 bg-black/40 p-6 rounded-2xl border border-white/5">
+                        <div class="flex items-center gap-2 mb-3 text-red-400 uppercase text-xs font-black tracking-widest">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                            Security Alert
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            While files are redundant, clearing your "Site Data" or "Browsing History" for this domain may wipe your IndexDB. To prevent this, <span class="text-white underline underline-offset-4">install GameDrive as a PWA (App)</span> to isolate your storage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FAQ -->
+        <section id="faq">
+            <div class="flex items-center mb-8">
+                <span class="section-dot"></span>
+                <h2 class="text-2xl font-bold tracking-tight">Common Questions</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+                <div>
+                    <h4 class="text-white font-bold mb-2">Folder Uploads</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">If your game uses a directory instead of a single file, compress it into a <code>.zip</code> before uploading. GameDrive treats archives as single units for efficiency.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-2">Cross-Device Sync</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Since this version uses local storage, you can use the <strong>Settings > Export</strong> tool to move your entire drive to a new computer in seconds.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-2">PWA Benefits</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Installing as an app (Chrome: "Install", Safari: "Add to Home Screen") prevents browser auto-cleanup from deleting your save history during disk maintenance.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-2">Delete Safety</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Deleting a save from GameDrive is permanent. We recommend keeping "Old" saves rather than deleting them, as cloud storage is highly optimized.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

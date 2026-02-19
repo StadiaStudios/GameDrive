@@ -1,0 +1,23 @@
+{
+  "name": "Game Drive",
+  "short_name": "Game Drive",
+  "description": "Game Drive is a high-performance, browser-based game save manager designed for gamers.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "red",
+  "theme_color": "red",
+  "icons": [
+    {
+      "src": "resources/icons/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "resources/icons/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

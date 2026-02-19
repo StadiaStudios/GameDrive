@@ -1,0 +1,3 @@
+Game Drive is a high-performance, browser-based game save manager designed for the modern gamer. Acting as a personal "Game Drive," 
+it allows you to securely backup, store, and sync your progress across devices without the need for a subscription. 
+Whether you're switching PCs or protecting your mobile gaming milestones, GameDrive ensures your saves are always safe, portable, and ready for your next session.
